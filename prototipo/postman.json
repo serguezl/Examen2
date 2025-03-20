@@ -1,0 +1,103 @@
+{
+    "info": {
+        "name": "Pruebas API products",
+        "_postman_id": "abcd-1234-xyz",
+        "description": "Prueba de los endpoints GET, GET(Id), POST, PATCH y DELETE del examen.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "GET /products",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/products",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["products"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "GET /products/:id",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/products/{{id}}",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["products", "{{id}}"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "POST /products",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"name\":\"Nuevo Producto\",\"price\":150,\"stock\":30,\"is_active\":true}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/products",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["products"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "PATCH /products/:id",
+            "request": {
+                "method": "PATCH",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"name\":\"Producto Modificado\",\"price\":120,\"stock\":40,\"is_active\":false}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/products/{{id}}",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["products", "{{id}}"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "DELETE /products/:id",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/products/{{id}}",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["products", "{{id}}"]
+                }
+            },
+            "response": []
+        }
+    ]
+}
